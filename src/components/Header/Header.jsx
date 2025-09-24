@@ -1,0 +1,22 @@
+import "./Header.css";
+const Header = () => {
+  return (
+    <header className="header">
+      <div className="logo-container">
+        <img
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+          alt="logo"
+        />
+      </div>
+      <nav className="nav-container">
+        <ul className="nav-items">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
