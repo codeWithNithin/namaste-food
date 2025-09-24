@@ -1,12 +1,12 @@
-import './App.css'
+import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
-
   return (
-    <>
-       <h1> Welcome to Namaste Food </h1>
-    </>
-  )
+    <div className="app">
+      <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;
