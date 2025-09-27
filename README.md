@@ -18,6 +18,14 @@
 - Restoraunt container
 - list of restoraunt cards
 
+# Restoraunt Card
+
+- img
+- name
+- ratings
+- price
+- cuisine
+- delivery time
 
 # Footer
 
