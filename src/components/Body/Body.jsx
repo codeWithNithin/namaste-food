@@ -40,13 +40,27 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search">
-        <input
-          type="text"
-          placeholder="search for food"
-          onChange={(e) => setSearchText(e.target.value)}
-        />
-        <button onClick={onSearchBtnClick}> search </button>
+      <div className="top">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="search for food"
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button onClick={onSearchBtnClick}> search </button>
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              const filtered = restoraunts.filter(
+                (restoraunt) => restoraunt.info.avgRating > 4
+              );
+              setFilteredRestoraunts(filtered);
+            }}
+          >
+            Top rated restoraunt
+          </button>
+        </div>
       </div>
       <div className="restoraunt-container">
         {filteredRestoraunts.map((ele) => (

@@ -6,3 +6,9 @@
     grid-row-gap: 1.5rem;
     margin: 1rem 0;
 }
+
+.top {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
