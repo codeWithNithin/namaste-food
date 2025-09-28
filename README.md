@@ -32,3 +32,13 @@
 - copyright
 - links
 - address
+
+# Hooks used
+
+- useState
+- useEffect
+
+# Routing in Apps
+
+- Client side routing
+- Server side routing
