@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import RestorauntCard from "../RestorauntCard/RestorauntCard";
+import RestorauntCard, {
+  RestorauntCardWithLabel,
+} from "../RestorauntCard/RestorauntCard";
 import "./Body.css";
 
 const Body = () => {
@@ -7,6 +9,8 @@ const Body = () => {
   const [restoraunts, setRestoraunts] = useState([]);
   const [filteredRestoraunts, setFilteredRestoraunts] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestoruantCardPromotedLabel = RestorauntCardWithLabel(RestorauntCard);
 
   useEffect(() => {
     fetchRestoraunts();
@@ -63,9 +67,13 @@ const Body = () => {
         </div>
       </div>
       <div className="restoraunt-container">
-        {filteredRestoraunts.map((ele) => (
-          <RestorauntCard key={ele.info.id} resData={ele.info} />
-        ))}
+        {filteredRestoraunts.map((ele) => {
+          ele.data.promoted ? (
+            <RestoruantCardPromotedLabel key={ele.info.id} resData={ele.info} />
+          ) : (
+            <RestorauntCard key={ele.info.id} resData={ele.info} />
+          );
+        })}
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./RestorauntCard.css";
 
 const RestorauntCard = ({ resData }) => {
-  const { name, cuisines, cloudinaryImageId, avgRating } = resData;
+  const navigate = useNavigate();
+
+  const { name, cuisines, cloudinaryImageId, avgRating, id } = resData;
+
+  const onCardClick = () => {
+    navigate(`/restourant/${id}`);
+  };
 
   return (
-    <div className="restoraunt-card">
+    <div className="restoraunt-card" onClick={onCardClick}>
       <div className="card-img">
         <img
           src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
@@ -21,6 +28,17 @@ const RestorauntCard = ({ resData }) => {
       </div>
     </div>
   );
+};
+
+export const RestorauntCardWithLabel = (RestorauntCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label> Promoted </label>
+        <RestorauntCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestorauntCard;
